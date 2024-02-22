@@ -14,30 +14,32 @@ def calculateTeamPoints(Data):
             team1Point = 0
             team2Point = 3
         
-        # Check if the team is already in the list
-        team1Index = -1
-        for i, team in enumerate(team_points):
-            if team[0] == team1:
-                team1Index = i
-                break
-        
-        team2Index = -1
-        for i, team in enumerate(team_points):
-            if team[0] == team2:
-                team2Index = i
-                break
-        
-        # If the team is not in the list, append it
-        if team1Index == -1:
-            team_points.append([team1, team1Point])
-        else:
-            team_points[team1Index][1] += team1Point
-        
-        if team2Index == -1:
-            team_points.append([team2, team2Point])
-        else:
-            team_points[team2Index][1] += team2Point
+        try:
+            score_index = team_points.index(team1)+1
+            team_points[score_index]+= team1Point
+        except:
+            team_points.append(team1)
+            team_points.append(team1Sc)
+        try:
+            score_index = team_points.index(team2)+1
+            team_points[score_index]+= team2Point
+        except:
+            team_points.append(team2)
+            team_points.append(team2Sc)
+    
+    
+    final_list = []
+    i = 0
+    j = 2
+    while j<=len(team_points):
+        final_list.append(team_points[i:j])
+        i+=2
+        j+=2
+
+
+
                     
-    return team_points
+    return final_list
+
 
 
