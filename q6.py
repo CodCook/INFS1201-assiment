@@ -1,14 +1,15 @@
-def calculateTeamPoints(Data):
+
+def highestScoringTeam(Data):
     """
-    Calculates the points for each team based on match data.
+    Calculates the highest-scoring team based on match data.
 
     Args:
-        Data (list): A list of match data. Each match is represented as a tuple
-                     (team1, team2, team1Sc, team2Sc).
+        Data (list): A list of tuples representing match data.
+            Each tuple contains (team1, team2, team1Sc, team2Sc).
 
     Returns:
-        list: A list of lists, where each inner list contains the team name and
-              their total points.
+        tuple: A tuple containing the highest score and a list of team names.
+            Example: (4, ['Qatar'])
     """
     team_points = []
     
@@ -44,9 +45,18 @@ def calculateTeamPoints(Data):
         final_list.append(team_points[i:j])
         i+=2
         j+=2
+    
+    top_points = final_list[0][1]
+    newlist = []
+    for point in final_list:
+        if point[1]>=top_points:
+            newlist.append(point)
+            top_points = point[1]
+    finallist = (newlist[0][1],[])
+    for team in newlist:
+        finallist[1].append(team[0])
         
-    return final_list
-
+    return finallist
 
 
 
