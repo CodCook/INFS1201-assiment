@@ -1,5 +1,11 @@
 def topGoalScorers(goalData):
-    '''this function return the top goal scorers'''
+    '''this function return the top goal scorers
+    varibles: team
+    player
+    goals
+    length
+    lst
+    '''
     length = len(goalData)
     team = 0
     player = 1
