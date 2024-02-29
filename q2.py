@@ -30,6 +30,6 @@ def predictMatchWinner(FirsT, secondT, teamData):
     else:
         winer = Team2
         loser = Team1
-    return f'{winer} ({winer} has more wins than {loser})' if winer != 'None' else f'None ({Team1} and {Team2} have the same number of wins)'
+    return winer #f'{winer} ({winer} has more wins than {loser})' if winer != 'None' else f'None ({Team1} and {Team2} have the same number of wins)'
 
 
