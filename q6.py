@@ -58,6 +58,17 @@ def highestScoringTeam(Data):
         
     return finallist
 
+#Test cases 2
+# Sample Run
+matchData = [
+ ('Qatar', 'Iraq', 3, 2),
+ ('Jordan', 'Qatar', 1, 1),
+ ('Jordan', 'Palestine', 3, 1)
+]
+
+result = highestScoringTeam(matchData)
+print(result)
+# Expected output: (4, ['Qatar', 'Jordan']) 
 
 
 

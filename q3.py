@@ -1,4 +1,3 @@
-
 def inputMatchData():
     """
     Collects match data from user input.
@@ -20,19 +19,24 @@ def inputMatchData():
         team1, team2 = matchTeams.split(',')
 
         finalS = input('Enter the final scores of the match (separated by space): ')
-        team1S, team2S = map(int, finalS.split(' '))
+        team1S, team2S = finalS.split(' ')
 
-        Datalis.append([team1, team2, team1S, team2S, [], []])
+        Datalis.append([team1, team2, int(team1S), int(team2S), [], []])
 
-        for j in range(1, team1S + 1):
-            Goal1 = input(f'Enter Goal {j} for {team1}: ')
+        for j in range(int(team1S)):
+            Goal1 = input(f'Enter Goal {j + 1} for {team1}: ')
             Datalis[i][4].append(Goal1)
 
-        for k in range(1, team2S + 1):
-            Goal2 = input(f'Enter Goal {k} for {team2}: ')
+        for k in range(int(team2S)):
+            Goal2 = input(f'Enter Goal {k + 1} for {team2}: ')
             Datalis[i][5].append(Goal2)
 
     return Datalis
+
+# Test your function
+'''matchData = inputMatchData()
+print(matchData)'''
+
 
 
 

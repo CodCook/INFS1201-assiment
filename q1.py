@@ -22,20 +22,20 @@ def checkMatchUpDistance(winT, persT):
     for i in range(len(persT)):
         if persT[i] != winT[i]:
             distance += 1
-            newtex += persT[i]
-        else:
             newtex += '*'
+        else:
+            newtex += persT[i]
 
     if distance == 0:
         Price = 'Congratulations! You are the winner of the Grand Prize: A VIP PASS to enjoy the Qatar Asia Cups from the best seats in the stadium!'
-
     elif 1 <= distance <= 2:
         Price = 'Congratulations! You win a small prize: An exclusive Qatar Asia Cups-themed football jersey.'
-
     else:
         Price = 'Better luck next time!'
 
     return (distance, winT, newtex, f'Your ticket number has a match-up distance of {distance}! {Price}')
+
+#print(checkMatchUpDistance('qatar', 'qatar'))
 
 
 

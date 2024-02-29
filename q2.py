@@ -33,3 +33,25 @@ def predictMatchWinner(FirsT, secondT, teamData):
     return winer #f'{winer} ({winer} has more wins than {loser})' if winer != 'None' else f'None ({Team1} and {Team2} have the same number of wins)'
 
 
+team_data = [
+    ['Qatar', 'India', ['wins', 10, 'losses', 5, 'draws', 3]],
+    ['Jordan', 'Iraq', ['wins', 3, 'losses', 3, 'draws', 2]],
+    ['Pakistan', 'China', ['wins', 6, 'losses', 8, 'draws', 4]]
+]
+'''
+predicted_winner = predictMatchWinner('Qatar', 'India', team_data)
+print(predicted_winner)
+# Expected output: 'Qatar' (Qatar has more wins than India)
+
+predicted_winner = predictMatchWinner('india', 'qatar', team_data)
+print(predicted_winner)
+# Expected output: 'Qatar' (Qatar has more wins than India)
+
+predicted_winner = predictMatchWinner('Jordan', 'Iraq', team_data)
+print(predicted_winner)
+# Expected output: None (Jordan and Iraq have the same number of wins)
+
+predicted_winner = predictMatchWinner('Pakistan', 'China', team_data)
+print(predicted_winner)
+# Expected output: 'China' (China has more wins than Pakistan)
+'''

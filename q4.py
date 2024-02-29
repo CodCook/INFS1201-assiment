@@ -25,29 +25,39 @@ def calculateTeamPoints(Data):
             team1Point = 0
             team2Point = 3
         
+        # Update team1's points
         try:
-            score_index = team_points.index(team1)+1
-            team_points[score_index]+= team1Point
-        except:
+            score_index = team_points.index(team1) + 1
+            team_points[score_index] += team1Point
+        except ValueError:
             team_points.append(team1)
-            team_points.append(team1Sc)
+            team_points.append(team1Point)
+        
+        # Update team2's points
         try:
-            score_index = team_points.index(team2)+1
-            team_points[score_index]+= team2Point
-        except:
+            score_index = team_points.index(team2) + 1
+            team_points[score_index] += team2Point
+        except ValueError:
             team_points.append(team2)
-            team_points.append(team2Sc)
+            team_points.append(team2Point)
+    
     final_list = []
     i = 0
     j = 2
-    while j<=len(team_points):
+    while j <= len(team_points):
         final_list.append(team_points[i:j])
-        i+=2
-        j+=2
+        i += 2
+        j += 2
         
     return final_list
 
-
-
-
-
+# Test cases
+matchData = [
+    ['Qatar', 'Iraq', 3, 2],
+    ['Jordan', 'Qatar', 1, 1],
+    ['Jordan', 'Palestine', 1, 2]
+]
+'''
+team_points = calculateTeamPoints(matchData)
+print(team_points)  # Expected output: [['Qatar', 4], ['Iraq', 0], ['Jordan', 1], ['Palestine', 3]]
+'''
